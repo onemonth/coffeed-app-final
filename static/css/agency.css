@@ -253,7 +253,7 @@ fieldset[disabled] .btn-xl.active {
 
     .navbar-default.navbar-shrink {
         padding: 10px 0;
-        background-color: #222;
+        background-color: #000;
     }
 
     .navbar-default.navbar-shrink .navbar-brand {
@@ -891,6 +891,10 @@ body {
     color:#d4a432;
 }
 
+.coffeed-rating i{
+    padding-left:10px;
+}
+
 .panel {
 padding:0px;
 background-color: #fff;
@@ -1013,7 +1017,9 @@ section#contact {
     border-radius: 0px;
 }
 
-
+.main-content{
+    padding-top: 90px;
+}
 
 
 .data-layer{
