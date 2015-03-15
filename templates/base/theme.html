@@ -4,6 +4,23 @@
     <li>
         <a class="page-scroll" href="/location">Find a Coffee Shop</a>
     </li>
+    {% if user.is_authenticated %}
+    <li>
+        <a class="page-scroll" href="/location/create/">Add a Location</a>
+    </li> 
+    {% else %}
+    <li>
+        <a class="page-scroll" href="/entrance/">Log In</a>
+    </li> 
+    {% endif %}     
+{% endblock %}
+
+{% block search %}
+<form action="/search/" class="navbar-form navbar-right" method="get">
+	<div class="form-group">
+		<input type="text" placeholder="Search" class="form-control" name="query"></input>
+	</div>
+</form>
 {% endblock %}
 
 {% block main_content %}

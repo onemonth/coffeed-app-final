@@ -3,9 +3,34 @@
 <div class="row main-content">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
-		<div class='panel'>
-		<h3>{{ location.title }}</h3>
+		<div class='row'>
+		<div class="col-md-8">
+			<h3><a href="{{ location.get_absolute_url }}">{{ location.title }}</a></h3>
+		</div>
+		<div class="col-md-4 text-right">
+			<h3>{% include 'base/rating.html' with rating=location.get_average_rating %}</h3>
+		</div>
+		<div class="col-md-12">
+		{% if location.address %}<p><b>Location: </b>{{ location.address }}</b></p>{% endif %}
+		{% if location.hours %}<p>{{ location.hours }}</p>{% endif %}
 		<p>{{ location.description }}</p>
+		{% if location.image_file %}
+			<img class="img-responsive" src="{{ location.image_file.url }}"></img>
+		{% endif %}
+	</div>
+	<div class="col-md-12">
+		<a type="button" href="{% url 'location_update' pk=location.id %}" class="btn btn-default pull-right">Edit</a>
+		{% if user_review %}
+		<a type="button" href="{% url 'review_update' pk=location.id %}" class="btn btn-default pull-right">Update Review</a>
+		{% else %}
+		<a type="button" href="{% url 'review_create' pk=location.id %}" class="btn btn-default pull-right">Create Review</a>
+		{% endif %}
+	</div>
+	<div class="col-md-12">
+		{% for review in location.get_reviews %}
+			{% include 'base/review.html' with location=location %}
+		{% endfor %}
+	</div>
 	</div>
 	</div>
 	<div class="col-md-2"></div>

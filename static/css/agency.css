@@ -1034,3 +1034,7 @@ h3 a {
 .btn{
     border-radius: 0px;
 }
+
+.wide-map{
+    height:400px;
+}
