@@ -54,7 +54,8 @@ INSTALLED_APPS = (
     'sitegate',
     'bootstrap3',
     'geoposition',
-    'bootstrap_pagination'
+    'bootstrap_pagination',
+    'widget_tweaks',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,6 +72,7 @@ ROOT_URLCONF = 'coffeedapp.urls'
 
 WSGI_APPLICATION = 'coffeedapp.wsgi.application'
 
+ON_HEROKU = os.environ.get('ON_HEROKU')
 
 # Database
 DATABASES = {
