@@ -34,7 +34,7 @@
                             {% if location.image_file %}
                         <div class="col-md-12" >
                         
-                        <img src="{{ location.image_file }}" class="img-responsive img-centered full-width" alt="">
+                        <img src="{{ location.get_image_url }}" class="img-responsive img-centered full-width" alt="">
 
                       </div>
                       {% endif %}

@@ -79,7 +79,7 @@ class Location(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse(viewname="location_list", args=[self.id])
+        return reverse(viewname="location_detail", args=[self.id])
 
     def get_average_rating(self):
         average = self.review_set.all().aggregate(Avg('rating'))['rating__avg']
