@@ -20,7 +20,7 @@
 		<div class="col-md-4 text-right">
 			<h3>{% include 'base/rating.html' with rating=location.get_average_rating %}</h3>
 		</div>
-		<div class="col-md-12">
+		<div class="col-md-8">
 		{% if location.address %}<p><b>Location: </b>{{ location.address }}</b></p>{% endif %}
 		{% if location.hours %}<p>{{ location.hours }}</p>{% endif %}
 		{% if location.image_file %}
