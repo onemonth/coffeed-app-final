@@ -61,7 +61,7 @@ def upload_to_location(instance, filename):
 class Location(models.Model):
     title = models.CharField(max_length=300)
     description = models.TextField(null=True, blank=True)
-    #address = models.TextField(null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
     position = GeopositionField(null=True, blank=True)
     hours = models.TextField(null=True, blank=True)
     image_file = models.ImageField(upload_to=upload_to_location, null=True, blank=True)

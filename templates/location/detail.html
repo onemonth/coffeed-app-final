@@ -17,7 +17,8 @@
     <div class="container">
         <div class="" >
             <div id="details">
-<div class="col-md-8">
+<div class="col-md-12">
+<div class="row">
                             <div class="col-md-8">
                             <h2>{{ location.title }}</h2>
                             </div>
@@ -25,29 +26,34 @@
                             <h2>{% include 'base/rating.html' with rating=location.get_average_rating %}</h2>
                             </div>
 
+
                             </div>
+                
                 <div class="col-md-8">
-                    <div class="">
-                            
+                    <div class="row">
+                            {% if location.get_image_url %}
                         <div class="col-md-12" >
+                        
                         <img src="{{ location.get_image_url }}" class="img-responsive img-centered full-width" alt="">
 
                       </div>
-                  </div>
-                  <div>
+                      {% endif %}
+                  
+                  <div class="row">
                     <div class="col-md-12" >{% include 'location/specifics.html' with location=location %}
-                        <div class="col-md-4">
+                    </div>
+                </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="">{{ location.description}}</p>
+                        <div class="">
                             {% if user.is_authenticated %}
-                            <a type="button" href="{% url 'location_update' pk=location.id %}" class="btn btn-default pull-right">Edit</a>
+                            <a type="button" href="{% url 'location_update' pk=location.id %}" class="btn btn-default">Edit</a>
                             {% endif %}
 
                         </div>
-                    </div>
-                </div>
-        <div>
-            <div class="col-md-12">
-                <p class="">{{ location.description}}</p>
             </div>
+        </div>
         </div>
             </div>
             
@@ -61,6 +67,7 @@
                     {% if location.website %}<p><a href="{{ location.website }}">{{ location.website }}</a></p>{% endif %}
                 </div>
                 <div class="col-md-3"></div>
+            </div>
             </div>
         </div>
 

@@ -128,7 +128,7 @@ AWS_QUERYSTRING_AUTH = False
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWSSecretKey')
 AWS_ACCESS_KEY_ID = os.environ.get('AWSAccessKeyId')
 
-AWS_STORAGE_BUCKET_NAME = 'onemonthpythoncoffeed'
+AWS_STORAGE_BUCKET_NAME = 'getcoffeed'
 
 
 
