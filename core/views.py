@@ -6,6 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView
 import core.models as coremodels
 from sitegate.decorators import redirect_signedin, sitegate_view
 
+
 # Create your views here.
 
 class LandingView(TemplateView):
